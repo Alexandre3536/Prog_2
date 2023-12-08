@@ -12,8 +12,8 @@ using PSIUWeb.Data;
 namespace PSIUWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230901010013_UserID NUll")]
-    partial class UserIDNUll
+    [Migration("20231006001726_Psico-Content-Category-2")]
+    partial class PsicoContentCategory2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -235,6 +235,58 @@ namespace PSIUWeb.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("PSIUWeb.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("PSIUWeb.Models.Content", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("HtmlContent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PsicoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Resume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PsicoId");
+
+                    b.ToTable("Contents");
+                });
+
             modelBuilder.Entity("PSIUWeb.Models.Pacient", b =>
                 {
                     b.Property<int>("Id")
@@ -267,6 +319,30 @@ namespace PSIUWeb.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Pacients");
+                });
+
+            modelBuilder.Entity("PSIUWeb.Models.Psico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CRP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Psicos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -318,6 +394,26 @@ namespace PSIUWeb.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("PSIUWeb.Models.Category", b =>
+                {
+                    b.HasOne("PSIUWeb.Models.Category", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("PSIUWeb.Models.Content", b =>
+                {
+                    b.HasOne("PSIUWeb.Models.Psico", "Psico")
+                        .WithMany()
+                        .HasForeignKey("PsicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Psico");
                 });
 
             modelBuilder.Entity("PSIUWeb.Models.Pacient", b =>

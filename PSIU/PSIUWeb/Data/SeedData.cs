@@ -5,57 +5,44 @@ namespace PSIUWeb.Data
 {
     public static class SeedData
     {
-        public static void EnsurePopuled(IApplicationBuilder app)
+
+        public static void EnsurePopulated( 
+            IApplicationBuilder app 
+        )
         {
             AppDbContext context =
                 app.ApplicationServices.CreateScope()
                 .ServiceProvider.GetRequiredService<AppDbContext>();
-            if (context.Database.GetAppliedMigrations().Any())
-            {
+
+            if (context.Database.GetPendingMigrations().Any())
+            { 
                 context.Database.Migrate();
             }
 
             if (!context.Pacients.Any())
             {
                 context.Pacients.AddRange(
-
                     new Pacient
                     {
-                        Name = "Alexandre",
-                        BirthDate = new DateTime(1991, 9, 8),
-                        Race = Race.Branco,
-                        Height = 170,
-                        Weight = 67
-
+                        Name = "Mauricio",
+                        BirthDate = new DateTime(1984, 7, 5),
+                        Race = Race.Pardo,
+                        Height = 180,
+                        Weight = 88
                     },
-                     new Pacient
-                     {
-                         Name = "Maria",
-                         BirthDate = new DateTime(1990, 9, 18),
-                         Race = Race.Pardo,
-                         Height = 165,
-                         Weight = 58
+                    new Pacient
+                    {
+                        Name = "Marcos",
+                        BirthDate = new DateTime(1987, 2, 28),
+                        Race = Race.Pardo,
+                        Height = 175,
+                        Weight = 90
+                    }
+                );
 
-                     }
-
-
-                    );
-
-                if (!context.Psicos.Any())
-                {
-                    context.Psicos.AddRange(
-
-                        new Psico
-                        {
-                            Name = "Alexandre",
-                            CRP = "5269968"
-                        }
-                    );
-
-                    context.SaveChanges();
-                }
+                context.SaveChanges();
             }
-
         }
+
     }
 }

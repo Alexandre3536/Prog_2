@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace PSIUWeb.Models
 {
-    
+
     public class Psico
     {
         [Key]
@@ -24,7 +24,7 @@ namespace PSIUWeb.Models
 
 
         [ForeignKey("User")]
-        public string?  UserId { get; set; }
+        public string? UserId { get; set; }
         public AppUser? User { get; set; }
     }
 }

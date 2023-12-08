@@ -12,8 +12,8 @@ using PSIUWeb.Data;
 namespace PSIUWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230818003712_Initial")]
-    partial class Initial
+    [Migration("20231005233839_Psico-Content-Category")]
+    partial class PsicoContentCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,7 +257,6 @@ namespace PSIUWeb.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Weight")
@@ -325,9 +324,7 @@ namespace PSIUWeb.Migrations
                 {
                     b.HasOne("PSIUWeb.Models.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

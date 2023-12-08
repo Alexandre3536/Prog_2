@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\PROGRAMACAO_II\PSIU\PSIUWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Category/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/PROGRAMACAO_II/PSIU/PSIUWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

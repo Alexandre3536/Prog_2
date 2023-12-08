@@ -4,7 +4,7 @@
 
 namespace PSIUWeb.Migrations
 {
-    public partial class UserIDNUll : Migration
+    public partial class UserIdNull : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

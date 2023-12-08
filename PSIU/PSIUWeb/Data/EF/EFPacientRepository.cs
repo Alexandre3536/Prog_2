@@ -6,19 +6,19 @@ namespace PSIUWeb.Data.EF
 {
     public class EFPacientRepository : IPacientRepository
     {
-        private AppDbContext Context;
+        private AppDbContext context;
+
         public EFPacientRepository(AppDbContext ctx)
         {
-            Context = ctx;
+            context = ctx;
         }
-        
 
         public Pacient? Create(Pacient p)
         {
             try
             {
-                Context.Pacients?.Add(p);
-                Context.SaveChanges();
+                context.Pacients?.Add(p);
+                context.SaveChanges();
             }
             catch
             {
@@ -31,36 +31,38 @@ namespace PSIUWeb.Data.EF
         public Pacient? Delete(int id)
         {
             Pacient? p = GetPacientById(id);
-
-            if (p == null)
+            
+            if (p == null)            
                 return null;
 
-            Context.Pacients?.Remove(p);
-            Context.SaveChanges();
+            context.Pacients?.Remove(p);
+            context.SaveChanges();
 
-            return p;
+            return p;            
         }
 
         public Pacient? GetPacientById(int id)
         {
-            Pacient? p =
-                Context
-                .Pacients?
-                .Where(p => p.Id == id).FirstOrDefault();
+            Pacient? p = 
+                context
+                    .Pacients?
+                    .Where(p => p.Id == id)
+                    .FirstOrDefault();
+
             return p;
         }
 
         public IQueryable<Pacient>? GetPacients()
         {
-            return Context.Pacients;
+            return context.Pacients;
         }
 
-        public Pacient? Update(Pacient? p)
+        public Pacient? Update(Pacient p)
         {
             try
             {
-                Context.Pacients?.Update(p);
-                Context.SaveChanges();
+                context.Pacients?.Update(p);
+                context.SaveChanges();
             }
             catch
             {
@@ -70,5 +72,4 @@ namespace PSIUWeb.Data.EF
             return p;
         }
     }
-    
 }

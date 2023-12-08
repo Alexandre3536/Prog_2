@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33829.357
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSIUWeb", "PSIUWeb\PSIUWeb.csproj", "{31F6E6A0-F270-4C1C-A82A-FA8688F1543E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSIUWeb", "PSIUWeb\PSIUWeb.csproj", "{6C7F6C41-E685-4045-BDEB-96387FA025D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31F6E6A0-F270-4C1C-A82A-FA8688F1543E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31F6E6A0-F270-4C1C-A82A-FA8688F1543E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31F6E6A0-F270-4C1C-A82A-FA8688F1543E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31F6E6A0-F270-4C1C-A82A-FA8688F1543E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7F6C41-E685-4045-BDEB-96387FA025D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7F6C41-E685-4045-BDEB-96387FA025D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7F6C41-E685-4045-BDEB-96387FA025D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7F6C41-E685-4045-BDEB-96387FA025D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {334FDB35-C7A9-4BE7-8B61-912AC36CD2B5}
+		SolutionGuid = {C713BCD8-0C80-4434-B3BC-9EF5F220F7BA}
 	EndGlobalSection
 EndGlobal

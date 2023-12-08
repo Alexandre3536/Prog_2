@@ -11,7 +11,7 @@ namespace PSIUWeb.Controllers
         private IPsicoRepository psicoRepository;
 
         public PsicoController(
-            IPsicoRepository _psicoRepo
+           IPsicoRepository _psicoRepo
         )
         {
             psicoRepository = _psicoRepo;
